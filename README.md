@@ -16,4 +16,4 @@
 - h2-2.2.220
 - log4j-1.2.17
 - apache-maven-3.8.7
-- Spring Boot# GALINDO-CRISTIAN_BOZZETTI-ANGELA-TRABAJO-INTEGRADOR
+- Spring Boot
