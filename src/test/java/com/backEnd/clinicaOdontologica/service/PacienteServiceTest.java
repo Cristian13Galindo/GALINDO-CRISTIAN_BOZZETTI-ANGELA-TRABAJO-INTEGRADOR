@@ -23,34 +23,28 @@ public class PacienteServiceTest {
     @Test
     @Order(1)
     public void guardarPacienteTest(){
-        Paciente pacienteGuardado= new Paciente("Jorgito","Pereyra","11111", LocalDate.of(2023,9,06),new Domicilio("calle 1",20,"La Rioja","La Rioja"),"jorge.pereyra@digitalhouse.com");
+        Paciente pacienteGuardado= new Paciente("Camilo","Galindo","11111", LocalDate.of(2023,9,13),new Domicilio("calle 1",20,"la que sea","la que sea"),"camilo992hotmail.es");
         pacienteService.guardarPaciente(pacienteGuardado);
         assertEquals(1L,pacienteGuardado.getId());
     }
+
     @Test
     @Order(2)
-    public void buscarPacientePorIdTest(){
-        Long idABuscar= 1L;
-        Optional<Paciente> pacienteAbuscar= pacienteService.buscarPorId(idABuscar);
-        assertNotNull(pacienteAbuscar.get());
-    }
-    @Test
-    @Order(3)
     public void listaPacientesTest(){
         List<Paciente> pacientes = pacienteService.obtenerTodos();
         assertEquals(1,pacientes.size());
     }
     @Test
-    @Order(4)
+    @Order(3)
     public void actualizarPacienteTest(){
-        Paciente pacienteActualizado = new Paciente(1L,"Agustin","Pereyra","11111", LocalDate.of(2023,9,06),new Domicilio("calle 1",20,"La Rioja","La Rioja"),"jorge.pereyra@digitalhouse.com");
+        Paciente pacienteActualizado = new Paciente(1L,"Camilo","Galindo","11111", LocalDate.of(2023,9,13),new Domicilio("calle 1",20,"la que sea","la que sea"),"camilo992@hotmail.es");
         pacienteService.actualizarPaciente(pacienteActualizado);
         Optional<Paciente> paciente= pacienteService.buscarPorId(1L);
-        assertEquals("Agustin",paciente.get().getNombre());
+        assertEquals("camilo",paciente.get().getNombre());
 
     }
     @Test
-    @Order(5)
+    @Order(4)
     public void eliminarPacienteTest(){
         Long id= 1L;
         pacienteService.eliminarPaciente(id);
